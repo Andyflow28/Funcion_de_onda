@@ -1,20 +1,27 @@
 import numpy as np
+import matplotlib.pyplot as plt
+import random
 
 def serie(n, x):
     a = 0
-    m = 5*x
+    lamda = np.pi
+    amplit = 0
     for i in range(0, n):
-        a += (np.cos(m))
+        lamda += (np.pi/n)
+        amplit += 1/n
+        a += amplit*(np.cos(2*np.pi*(x/lamda)))
         
     return a
 
-def table(z):
-    b = []
-    c = 0.157079633
-    for i in range(0, 20):
-        b.append(serie(z, i*c*(np.pi)))
-        
-    for i in range(0, 20):
-        print(b[i])
-        
-table(1)
+x = np.arange(-(10*np.pi),10*(np.pi),np.pi/1000)
+y = serie(5000000, x)
+
+plt.plot(x,y)
+plt.xlabel('x')
+plt.ylabel('Phi(x)')
+plt.title('Funcion de Onda')
+plt.show()
+
+# print(np.arange(-(10*np.pi),10*(np.pi),np.pi/100))
+# print(serie(10, x))
+# print(np.sin(2*x))
