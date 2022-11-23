@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import random
 
 def serie(n, x):
     a = 0
@@ -21,7 +20,3 @@ plt.xlabel('x')
 plt.ylabel('Phi(x)')
 plt.title('Funcion de Onda')
 plt.show()
-
-# print(np.arange(-(10*np.pi),10*(np.pi),np.pi/100))
-# print(serie(10, x))
-# print(np.sin(2*x))
